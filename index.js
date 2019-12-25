@@ -1,13 +1,14 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
-const exec = require('child_process').exec;
+import { setFailed } from '@actions/core';
+import github from '@actions/github';
+import { exec } from 'child_process';
+import { join } from 'path';
 
 try {
-    exec('./setup-bazel.sh', function(error, stdout, stderr) {
+    exec(join(__dirname, 'setup-bazel.sh'), function(error, stdout, stderr) {
         if (error) {
-            core.setFailed(error.message);
+            setFailed(error.message);
         }
     });
 } catch (error) {
-    core.setFailed(error.message);
+    setFailed(error.message);
 }
