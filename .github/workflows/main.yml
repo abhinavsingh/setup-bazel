@@ -1,0 +1,23 @@
+name: Setup Bazel Test
+
+on: [push]
+
+jobs:
+    build:
+      runs-on: ${{ matrix.os }}-latest
+      name: Testing on ${{ matrix.os }}
+      strategy:
+        matrix:
+          os: [macOS, ubuntu, windows]
+        max-parallel: 4
+        fail-fast: false
+      steps:
+        - uses: actions/checkout@v1
+        - name: Setup Bazel
+          uses: ./
+        - name: Verify Bazel Installation (Windows Only)
+          if: matrix.os == 'windows'
+          run: bazel.exe -h
+        - name: Verify Bazel Installation
+          if: matrix.os != 'windows'
+          run: bazel -h
