@@ -496,6 +496,7 @@ module.exports = require("os");
 
 const core = __webpack_require__(470);
 const github = __webpack_require__(469);
+const exec = __webpack_require__(129).exec;
 
 try {
     exec('./setup-bazel.sh', function(error, stdout, stderr) {
