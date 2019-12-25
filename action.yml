@@ -1,0 +1,9 @@
+name: 'Setup Bazel'
+author: 'Abhinav Singh'
+description: 'Cross platform Bazel installation for your GitHub workflows'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+    icon: 'box'
+    color: 'green'
