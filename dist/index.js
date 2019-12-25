@@ -498,7 +498,11 @@ const core = __webpack_require__(470);
 const github = __webpack_require__(469);
 
 try {
-    
+    exec('./setup-bazel.sh', function(error, stdout, stderr) {
+        if (error) {
+            core.setFailed(error.message);
+        }
+    });
 } catch (error) {
     core.setFailed(error.message);
 }
