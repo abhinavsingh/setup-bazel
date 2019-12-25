@@ -17,7 +17,7 @@ jobs:
           uses: abhinavsingh/setup-bazel@master
         - name: Verify Bazel Installation (Windows Only)
           if: matrix.os == 'windows'
-          run: bazel.exe -h
+          run: ./bazel.exe -h
         - name: Verify Bazel Installation
           if: matrix.os != 'windows'
           run: bazel -h
