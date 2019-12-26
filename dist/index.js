@@ -512,7 +512,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 try {
-    Object(child_process__WEBPACK_IMPORTED_MODULE_2__.exec)(__webpack_require__.ab + "setup-bazel.sh", function(error, stdout, stderr) {
+    const setupBazel = __webpack_require__.ab + "setup-bazel.sh";
+    const version = core.getInput('version');
+    Object(child_process__WEBPACK_IMPORTED_MODULE_2__.exec)(setupBazel + " " + version, function(error, stdout, stderr) {
         if (error) {
             Object(_actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed)(error.message);
         }
