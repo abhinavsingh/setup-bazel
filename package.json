@@ -1,19 +1,15 @@
 {
   "name": "setup-bazel",
-  "version": "1.0.0",
-  "description": "",
+  "version": "3.0.0",
+  "description": "Cross platform Bazel installation for your GitHub workflows",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Abhinav Singh",
   "license": "ISC",
   "dependencies": {
-    "@actions/core": "^1.2.0",
-    "@actions/github": "^2.0.0"
-  },
-  "devDependencies": {
-    "@zeit/ncc": "^0.20.5"
+    "@actions/core": "^1.2.0"
   }
 }
