@@ -55,13 +55,12 @@ To install a specific version of `bazel`:
 
 ### v3
 
-- Aborts workflow if bazel setup fails.
-- Now no artifacts are left under user repository.
-  - Except on `windows` where Bazel is available as `./bazel.exe`.
+- Aborts workflow if `bazel` setup fails.
+- Clean up after `bazel` setup.
 
 ### v2
 
-- Added support bazel version pinning.
+- Added support for `bazel` version pinning.
 
 ### v1
 
