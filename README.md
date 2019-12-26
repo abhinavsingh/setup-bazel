@@ -10,6 +10,9 @@ Cross platform [Bazel](https://bazel.build/) installation for your GitHub workfl
     - [Pin Bazel Release](#pin-bazel-release)
 - [Notes for Windows](#notes-for-windows)
 - [Changelog](#changelog)
+    - [v3](#v3)
+    - [v2](#v2)
+    - [v1](#v1)
 
 ## How it works
 
@@ -49,3 +52,16 @@ To install a specific version of `bazel`:
 - Use as `./bazel.exe`
 
 ## Changelog
+
+### v3
+
+- Aborts workflow if `bazel` setup fails.
+- Clean up after `bazel` setup.
+
+### v2
+
+- Added support for `bazel` version pinning.
+
+### v1
+
+- First release.
