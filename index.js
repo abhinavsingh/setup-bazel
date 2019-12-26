@@ -4,7 +4,9 @@ import { exec } from 'child_process';
 import { join } from 'path';
 
 try {
-    exec(join(__dirname, 'setup-bazel.sh'), function(error, stdout, stderr) {
+    const setupBazel = join(__dirname, 'setup-bazel.sh');
+    const version = core.getInput('version');
+    exec(setupBazel + " " + version, function(error, stdout, stderr) {
         if (error) {
             setFailed(error.message);
         }

@@ -12,6 +12,8 @@ Cross platform [Bazel](https://bazel.build/) installation for your GitHub workfl
 ```yaml
 - name: Setup Bazel
   uses: abhinavsingh/setup-bazel@master
+  with:
+    version: 2.0.0
 - name: Use Bazel (Windows only)
   if: matrix.os == 'windows'
   run: ./bazel.exe -h
