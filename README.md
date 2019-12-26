@@ -2,18 +2,28 @@
 
 Cross platform [Bazel](https://bazel.build/) installation for your GitHub workflows.
 
-## How it works?
+# Table of Contents
 
-- Action will install `bazel` binary for your GitHub workflows.
+- [How it works](#how-it-works)
+- [Usage](#usage)
+    - [Install Latest Bazel Release](#install-latest-bazel-release)
+    - [Pin Bazel Release](#pin-bazel-release)
+- [Notes for Windows](#notes-for-windows)
+- [Changelog](#changelog)
+
+## How it works
+
+- Action installs `bazel` binary for your GitHub workflows.
 - It follows [official installation](https://docs.bazel.build/versions/master/install.html) instructions.
+- Support for pinning to specific `bazel` version.
 
 ## Usage
 
+### Install Latest Bazel Release
+
 ```yaml
 - name: Setup Bazel
-  uses: abhinavsingh/setup-bazel@v2
-  with:
-    version: 2.0.0
+  uses: abhinavsingh/setup-bazel@v3
 - name: Use Bazel (Windows only)
   if: matrix.os == 'windows'
   run: ./bazel.exe -h
@@ -22,7 +32,20 @@ Cross platform [Bazel](https://bazel.build/) installation for your GitHub workfl
   run: bazel -h
 ```
 
-## Current Limitations
+### Pin Bazel Release
 
-- On windows, `bazel.exe` is placed in project root.
-  - Use as `./bazel.exe`
+To install a specific version of `bazel`:
+
+```yaml
+- name: Setup Bazel
+  uses: abhinavsingh/setup-bazel@v3
+  with:
+    version: 2.0.0
+```
+
+## Notes for Windows
+
+- `bazel.exe` is placed in your project root
+- Use as `./bazel.exe`
+
+## Changelog
