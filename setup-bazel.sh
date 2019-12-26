@@ -6,13 +6,22 @@ BAZEL_DOWNLOAD_PREFIX="https://github.com/bazelbuild/bazel/releases/download"
 
 kernelName="$(uname -s)"
 case "$kernelName" in
-    Darwin*)    installBazel=CommonSetup;;
-    Linux*)     installBazel=CommonSetup;;
-    *)          installBazel=WindowsSetup;;
+    Darwin*)
+        installBazel=CommonSetup
+        OS="darwin"
+        ;;
+    Linux*)
+        installBazel=CommonSetup
+        OS="linux"
+        ;;
+    *)
+        installBazel=WindowsSetup
+        OS="windows"
+        ;;
 esac
 
 CommonSetup() {
-    curl -fsSL ${BAZEL_DOWNLOAD_PREFIX}/${VERSION}/bazel-${VERSION}-installer-darwin-${ARCH}.sh \
+    curl -fsSL ${BAZEL_DOWNLOAD_PREFIX}/${VERSION}/bazel-${VERSION}-installer-${OS}-${ARCH}.sh \
         -o bazel-installer.sh
     if [[ $? != 0 ]]; then
         echo "Failed to download bazel installer"
@@ -24,7 +33,7 @@ CommonSetup() {
 }
 
 WindowsSetup() {
-    curl -fsSL ${BAZEL_DOWNLOAD_PREFIX}/${VERSION}/bazel-${VERSION}-windows-${ARCH}.exe \
+    curl -fsSL ${BAZEL_DOWNLOAD_PREFIX}/${VERSION}/bazel-${VERSION}-${OS}-${ARCH}.exe \
         -o bazel.exe
     if [[ $? != 0 ]]; then
         echo "Failed to download bazel exe"
