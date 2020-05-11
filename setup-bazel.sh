@@ -24,7 +24,7 @@ CommonSetup() {
     curl -fsSL ${BAZEL_DOWNLOAD_PREFIX}/${VERSION}/bazel-${VERSION}-installer-${OS}-${ARCH}.sh \
         -o bazel-installer.sh
     if [[ $? != 0 ]]; then
-        echo "Failed to download bazel installer"
+        echo "Failed to download bazel installer: ${BAZEL_DOWNLOAD_PREFIX}/${VERSION}/bazel-${VERSION}-installer-${OS}-${ARCH}.sh"
         exit 1
     fi
     chmod +x bazel-installer.sh
@@ -36,7 +36,7 @@ WindowsSetup() {
     curl -fsSL ${BAZEL_DOWNLOAD_PREFIX}/${VERSION}/bazel-${VERSION}-${OS}-${ARCH}.exe \
         -o bazel.exe
     if [[ $? != 0 ]]; then
-        echo "Failed to download bazel exe"
+        echo "Failed to download bazel exe: ${BAZEL_DOWNLOAD_PREFIX}/${VERSION}/bazel-${VERSION}-${OS}-${ARCH}.exe"
         exit 1
     fi
 }
