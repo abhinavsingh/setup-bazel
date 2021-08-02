@@ -43,7 +43,7 @@ To install a specific version of `bazel`:
 - name: Setup Bazel
   uses: abhinavsingh/setup-bazel@v3
   with:
-    version: 2.0.0
+    version: 4.1.0
 ```
 
 ## Notes for Windows
